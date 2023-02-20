@@ -63,6 +63,7 @@
                     localStorage.setItem("token", document.getElementById("token").value);
                     document.getElementById("save-success").style.display = "block";
                     document.getElementById("token-error").style.display = "none";
+                    displayAdminIfSuperAuth();
                 } else {
                     document.getElementById("token-error").style.display = "block";
                     document.getElementById("save-success").style.display = "none";

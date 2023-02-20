@@ -74,6 +74,7 @@ func main() {
 	router.HandleFunc("/notifier/{notifier}/subscribe", notifierSubscribeHandler).Name("notifierSubscribe")
 	router.HandleFunc("/notifier/{notifier}/unsubscribe", notifierUnsubscribeHandler).Name("notifierUnsubscribe")
 	router.HandleFunc("/settings", settingsHandler).Name("settings")
+	router.HandleFunc("/admin", adminHandler).Name("admin")
 	router.HandleFunc("/profiles/{profile}", profileHandler).Name("profile")
 
 	router.HandleFunc("/api/reloadconfig", reloadConfigApiHandler)

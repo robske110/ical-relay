@@ -49,6 +49,17 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func adminHandler(w http.ResponseWriter, r *http.Request) {
+	requestLogger := log.WithFields(log.Fields{"client": GetIP(r)})
+	requestLogger.Infoln("admin request")
+
+	err := htmlTemplates.ExecuteTemplate(w, "admin.html", getGlobalTemplateData())
+	if err != nil {
+		tryRenderErrorOrFallback(w, r, http.StatusInternalServerError, err, "Internal Server Error")
+		return
+	}
+}
+
 func settingsHandler(w http.ResponseWriter, r *http.Request) {
 	requestLogger := log.WithFields(log.Fields{"client": GetIP(r)})
 	requestLogger.Infoln("settings request")

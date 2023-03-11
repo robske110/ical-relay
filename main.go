@@ -13,7 +13,7 @@ import (
 	"syscall"
 )
 
-var version = "2.0.0-beta.3.2"
+var version = "2.0.0-beta.DEV/branch:beta5_db_frontend"
 
 var configPath string
 var conf Config

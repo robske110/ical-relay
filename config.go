@@ -160,6 +160,7 @@ func reloadConfig() error {
 		return err
 	} else {
 		log.Info("Config reloaded")
+		conf.importToDB()
 		return nil
 	}
 	//TODO: clear caches

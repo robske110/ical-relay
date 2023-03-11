@@ -133,6 +133,7 @@ func (c Config) importToDB() {
 		for _, token := range profile.Tokens {
 			dbWriteProfileToken(profile, token, nil)
 		}
+		fmt.Printf("_org_r:%#v\n", profile.Modules)
 		for _, module := range profile.Modules {
 			if !dbProfileModuleExists(profile, module) {
 				log.Debug("Adding module " + module["name"])

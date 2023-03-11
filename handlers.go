@@ -160,6 +160,7 @@ func getEventsByDay(calendar *ics.Calendar, profileName string) calendarDataByDa
 		}
 		endTime, err := event.GetEndAt()
 		if err != nil {
+			log.Debug(event)
 			log.Errorln(err)
 			continue
 		}
